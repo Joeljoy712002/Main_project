@@ -6,7 +6,7 @@ import Banner from '../../../public/appBanner.png';
 import Cal from '../../../public/cal.png';
 import Diamond from '../../../public/icons/diamond.svg';
 import CheckIcon from '../../../public/icons/check.svg';
-// import { CLIENTS, PRICING_CARDS, PRICING_PLANS, USERS } from '@/lib/constants';
+import { CLIENTS, PRICING_CARDS, PRICING_PLANS, USERS } from '@/lib/constants';
 import { randomUUID } from 'crypto';
 import { twMerge } from 'tailwind-merge';
 import clsx from 'clsx';
@@ -52,7 +52,7 @@ const HomePage = () => {
             bg-background
           "
           >
-            Get Adaptiflex Free
+            Get Cypress Free
           </Button>
         </div>
         <div
@@ -122,7 +122,7 @@ const HomePage = () => {
                 animate-slide
           "
             >
-              {/* {CLIENTS.map((client) => (
+              {CLIENTS.map((client) => (
                 <div
                   key={client.alt}
                   className=" relative
@@ -140,7 +140,7 @@ const HomePage = () => {
                     className="object-contain max-w-none"
                   />
                 </div>
-              ))} */}
+              ))}
             </div>
           ))}
         </div>
@@ -233,7 +233,7 @@ const HomePage = () => {
                 'hover:paused'
               )}
             >
-              {/* {USERS.map((testimonial, index) => (
+              {USERS.map((testimonial, index) => (
                 <CustomCard
                   key={testimonial.name}
                   className="w-[500px]
@@ -269,7 +269,7 @@ const HomePage = () => {
                     </p>
                   }
                 ></CustomCard>
-              ))} */}
+              ))}
             </div>
           ))}
         </div>
@@ -296,7 +296,7 @@ const HomePage = () => {
         mt-10
         "
         >
-          {/* {PRICING_CARDS.map((card) => (
+          {PRICING_CARDS.map((card) => (
             <CustomCard
               key={card.planType}
               className={clsx(
@@ -389,7 +389,7 @@ const HomePage = () => {
                 </ul>
               }
             />
-          ))} */}
+          ))}
         </div>
       </section>
     </>

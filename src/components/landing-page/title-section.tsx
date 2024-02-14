@@ -26,9 +26,8 @@ const TitleSection: React.FC<TitleSectionProps> = ({
           className="rounded-full
           p-[1px]
           text-sm
-          dark:bg-gradient-to-r
-          dark:from-brand-primaryBlue
-          dark:to-brand-primaryPurple
+          border-2
+          border-slate-200
         "
         >
           <div
