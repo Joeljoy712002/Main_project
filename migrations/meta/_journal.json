@@ -1,0 +1,27 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1707887961466,
+      "tag": "0000_dapper_ben_parker",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1707889476152,
+      "tag": "0001_wet_marvel_apes",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1707890934572,
+      "tag": "0002_numerous_risque",
+      "breakpoints": true
+    }
+  ]
+}
