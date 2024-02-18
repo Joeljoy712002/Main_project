@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface TemplateProps {
   children: React.ReactNode;
 }

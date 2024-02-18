@@ -22,6 +22,13 @@
       "when": 1707890934572,
       "tag": "0002_numerous_risque",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1707933625933,
+      "tag": "0003_minor_elektra",
+      "breakpoints": true
     }
   ]
 }
