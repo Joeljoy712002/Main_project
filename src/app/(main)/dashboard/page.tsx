@@ -33,8 +33,7 @@ const DashboardPage = async () => {
         w-screen
         flex
         justify-center
-        items-center
-  "
+        items-center"
       >
         <DashboardSetup
           user={user}

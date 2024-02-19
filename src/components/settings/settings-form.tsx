@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useToast } from '../ui/use-toast';
 import { useAppState } from '@/lib/providers/state-provider';
 import { User, workspace } from '@/lib/supabase/supabase.types';

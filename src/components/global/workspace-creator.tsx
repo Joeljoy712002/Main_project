@@ -78,13 +78,7 @@ const WorkspaceCreator = () => {
         >
           Name
         </Label>
-        <div
-          className="flex 
-        justify-center 
-        items-center 
-        gap-2
-        "
-        >
+        <div className="flex justify-center items-center gap-2">
           <Input
             name="name"
             value={title}
@@ -127,8 +121,7 @@ const WorkspaceCreator = () => {
                   <article className="text-left flex flex-col">
                     <span>Private</span>
                     <p>
-                      Your workspace is private to you. You can choose to share
-                      it later.
+                      Your workspace is private to you. You can choose to share it later.
                     </p>
                   </article>
                 </div>

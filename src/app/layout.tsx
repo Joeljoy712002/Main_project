@@ -3,6 +3,8 @@ import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import db from "@/lib/supabase/db";
 import { ThemeProvider } from "@/lib/providers/next-theme-provider";
+import AppStateProvider from "@/lib/providers/state-provider";
+import { twMerge } from "tailwind-merge";
 
 const DM = DM_Sans({ subsets: ["latin"] });
 
@@ -20,13 +22,15 @@ export default function RootLayout({
   // console.log(db)
   return (
     <html lang="en">
-      <body className={DM.className}>
+      <body className={twMerge('bg-background', DM.className)}>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
           enableSystem
         >
-          {children}
+          <AppStateProvider>
+            {children}
+          </AppStateProvider>
         </ThemeProvider>
       </body>
     </html>

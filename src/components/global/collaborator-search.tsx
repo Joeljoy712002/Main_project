@@ -1,7 +1,7 @@
 'use client';
 import { useSupabaseUser } from '@/lib/providers/supabase-user-provider';
 import { User } from '@/lib/supabase/supabase.types';
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   Sheet,
   SheetContent,
@@ -39,7 +39,7 @@ const CollaboratorSearch: React.FC<CollaboratorSearchProps> = ({
     };
   }, []);
 
-  const getUserData = ()=>{}
+  const getUserData = () => { }
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (timerRef) clearTimeout(timerRef.current);
@@ -67,12 +67,7 @@ const CollaboratorSearch: React.FC<CollaboratorSearchProps> = ({
           </SheetDescription>
         </SheetHeader>
         <div
-          className="flex justify-center
-          items-center
-          gap-2
-          mt-2
-        "
-        >
+          className="flex justify-center items-center gap-2 mt-2">
           <Search />
           <Input
             name="name"

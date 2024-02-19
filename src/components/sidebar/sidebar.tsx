@@ -69,16 +69,15 @@ const Sidebar: React.FC<SidebarProps> = async ({ params, className }) => {
             ...sharedWorkspaces,
           ].find((workspace) => workspace.id === params.workspaceId)}
         />
-        <PlanUsage
+
+        {/* <PlanUsage
           foldersLength={workspaceFolderData?.length || 0}
           subscription={subscriptionData}
-        />
+        /> */}
+
         <NativeNavigation myWorkspaceId={params.workspaceId} />
-        <ScrollArea
-          className="overflow-scroll relative
-          h-[450px]
-        "
-        >
+
+        <ScrollArea className="overflow-auto  relative h-[450px]">
           <div
             className="pointer-events-none 
           w-full 
@@ -95,6 +94,7 @@ const Sidebar: React.FC<SidebarProps> = async ({ params, className }) => {
             workspaceId={params.workspaceId}
           />
         </ScrollArea>
+
       </div>
       <UserCard subscription={subscriptionData} />
     </aside>
