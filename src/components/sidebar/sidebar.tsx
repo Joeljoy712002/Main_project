@@ -70,10 +70,10 @@ const Sidebar: React.FC<SidebarProps> = async ({ params, className }) => {
           ].find((workspace) => workspace.id === params.workspaceId)}
         />
 
-        {/* <PlanUsage
+        <PlanUsage
           foldersLength={workspaceFolderData?.length || 0}
           subscription={subscriptionData}
-        /> */}
+        />
 
         <NativeNavigation myWorkspaceId={params.workspaceId} />
 

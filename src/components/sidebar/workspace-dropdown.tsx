@@ -74,6 +74,7 @@ const WorkspaceDropdown: React.FC<WorkspaceDropdownProps> = ({
           backdrop-blur-lg
           group
           overflow-auto
+          scrollbar-hide
           border-[1px]
           border-muted
       "
@@ -136,7 +137,7 @@ const WorkspaceDropdown: React.FC<WorkspaceDropdownProps> = ({
               w-full"
               >
                 <article
-                  className="text-slate-500 
+                  className="text-white/80
                 rounded-full
                  bg-slate-800 
                  w-4 

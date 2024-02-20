@@ -2,7 +2,7 @@
 import { useSupabaseUser } from '@/lib/providers/supabase-user-provider';
 import { User, workspace } from '@/lib/supabase/supabase.types';
 import { useRouter } from 'next/navigation';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Label } from '../ui/label';
 import { Input } from '../ui/input';
 import {
@@ -106,6 +106,7 @@ const WorkspaceCreator = () => {
           <SelectTrigger className="w-full h-26 -mt-3">
             <SelectValue />
           </SelectTrigger>
+          
           <SelectContent>
             <SelectGroup>
               <SelectItem value="private">
@@ -163,6 +164,7 @@ const WorkspaceCreator = () => {
               className="
             h-[120px]
             overflow-y-scroll
+            scrollbar-hide
             w-full
             rounded-md
             border
@@ -171,10 +173,7 @@ const WorkspaceCreator = () => {
               {collaborators.length ? (
                 collaborators.map((c) => (
                   <div
-                    className="p-4 flex
-                      justify-between
-                      items-center
-                "
+                    className="p-4 flex justify-between items-center"
                     key={c.id}
                   >
                     <div className="flex gap-4 items-center">

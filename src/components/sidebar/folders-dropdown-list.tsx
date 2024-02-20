@@ -1,7 +1,7 @@
 'use client';
 import { useAppState } from '@/lib/providers/state-provider';
 import { Folder } from '@/lib/supabase/supabase.types';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import TooltipComponent from '../global/tooltip-component';
 import { PlusIcon } from 'lucide-react';
 import { useSupabaseUser } from '@/lib/providers/supabase-user-provider';
@@ -29,7 +29,7 @@ const FoldersDropdownList: React.FC<FoldersDropdownListProps> = ({
   const [folders, setFolders] = useState(workspaceFolders);
   const { subscription } = useSupabaseUser();
 
-  //effec set nitial satte server app state
+  //effect set initial state server app state
   useEffect(() => {
     if (workspaceFolders.length > 0) {
       dispatch({
