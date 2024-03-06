@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   Dialog,
   DialogContent,
@@ -30,8 +31,7 @@ const CustomDialogTrigger: React.FC<CustomDialogTriggerProps> = ({
         className="h-screen
         block
         sm:h-[440px]
-        overflow-auto
-        scrollbar-hide
+        overflow-scroll
         w-full
       "
       >

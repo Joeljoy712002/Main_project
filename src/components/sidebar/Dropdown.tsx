@@ -2,7 +2,7 @@
 import { useAppState } from '@/lib/providers/state-provider';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import { useRouter } from 'next/navigation';
-import { useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import {
   AccordionContent,
   AccordionItem,

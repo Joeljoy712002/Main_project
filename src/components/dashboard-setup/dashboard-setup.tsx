@@ -1,6 +1,6 @@
 'use client';
 import { AuthUser } from '@supabase/supabase-js';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { v4 } from 'uuid';
 
@@ -119,7 +119,12 @@ const DashboardSetup: React.FC<DashboardSetupProps> = ({
   };
 
   return (
-    <Card className="w-[800px] h-screen sm:h-auto">
+    <Card
+      className="w-[800px]
+      h-screen
+      sm:h-auto
+  "
+    >
       <CardHeader>
         <CardTitle>Create A Workspace</CardTitle>
         <CardDescription>
@@ -127,11 +132,14 @@ const DashboardSetup: React.FC<DashboardSetupProps> = ({
           collaborators later from the workspace settings tab.
         </CardDescription>
       </CardHeader>
-
       <CardContent>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-col gap-4">
-            <div className="flex items-center gap-4">
+            <div
+              className="flex
+            items-center
+            gap-4"
+            >
               <div className="text-5xl">
                 <EmojiPicker getValue={(emoji) => setSelectedEmoji(emoji)}>
                   {selectedEmoji}
@@ -140,7 +148,10 @@ const DashboardSetup: React.FC<DashboardSetupProps> = ({
               <div className="w-full ">
                 <Label
                   htmlFor="workspaceName"
-                  className="text-sm text-muted-foreground">
+                  className="text-sm
+                  text-muted-foreground
+                "
+                >
                   Name
                 </Label>
                 <Input
@@ -157,9 +168,13 @@ const DashboardSetup: React.FC<DashboardSetupProps> = ({
                 </small>
               </div>
             </div>
-
             <div>
-              <Label htmlFor="logo" className="text-sm text-muted-foreground">
+              <Label
+                htmlFor="logo"
+                className="text-sm
+                  text-muted-foreground
+                "
+              >
                 Workspace Logo
               </Label>
               <Input

@@ -1,6 +1,7 @@
 export const dynamic = 'force-dynamic';
 
 import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/lib/providers/next-theme-provider';
 import { DM_Sans } from 'next/font/google';
@@ -10,7 +11,7 @@ import { SupabaseUserProvider } from '@/lib/providers/supabase-user-provider';
 import { Toaster } from '@/components/ui/toaster';
 import { SocketProvider } from '@/lib/providers/socket-provider';
 
-const dm = DM_Sans({ subsets: ['latin'] });
+const inter = DM_Sans({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -24,10 +25,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={twMerge('bg-background', dm.className)}>
+      <body className={twMerge('bg-background', inter.className)}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="dark"
           enableSystem
         >
           <AppStateProvider>

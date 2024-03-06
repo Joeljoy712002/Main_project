@@ -294,7 +294,6 @@ interface AppStateProviderProps {
 }
 
 const AppStateProvider: React.FC<AppStateProviderProps> = ({ children }) => {
-
   const [state, dispatch] = useReducer(appReducer, initialState);
   const pathname = usePathname();
 

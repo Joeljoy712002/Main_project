@@ -2,7 +2,7 @@
 import { useSupabaseUser } from '@/lib/providers/supabase-user-provider';
 import { User, workspace } from '@/lib/supabase/supabase.types';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Label } from '../ui/label';
 import { Input } from '../ui/input';
 import {
@@ -78,7 +78,13 @@ const WorkspaceCreator = () => {
         >
           Name
         </Label>
-        <div className="flex justify-center items-center gap-2">
+        <div
+          className="flex 
+        justify-center 
+        items-center 
+        gap-2
+        "
+        >
           <Input
             name="name"
             value={title}
@@ -106,7 +112,6 @@ const WorkspaceCreator = () => {
           <SelectTrigger className="w-full h-26 -mt-3">
             <SelectValue />
           </SelectTrigger>
-          
           <SelectContent>
             <SelectGroup>
               <SelectItem value="private">
@@ -122,7 +127,8 @@ const WorkspaceCreator = () => {
                   <article className="text-left flex flex-col">
                     <span>Private</span>
                     <p>
-                      Your workspace is private to you. You can choose to share it later.
+                      Your workspace is private to you. You can choose to share
+                      it later.
                     </p>
                   </article>
                 </div>
@@ -164,7 +170,6 @@ const WorkspaceCreator = () => {
               className="
             h-[120px]
             overflow-y-scroll
-            scrollbar-hide
             w-full
             rounded-md
             border
@@ -173,7 +178,10 @@ const WorkspaceCreator = () => {
               {collaborators.length ? (
                 collaborators.map((c) => (
                   <div
-                    className="p-4 flex justify-between items-center"
+                    className="p-4 flex
+                      justify-between
+                      items-center
+                "
                     key={c.id}
                   >
                     <div className="flex gap-4 items-center">

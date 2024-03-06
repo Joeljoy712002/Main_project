@@ -19,8 +19,8 @@ import Logo from '../../../../public/cypresslogo.svg';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import Loader from '@/components/global/Loader';
-import { actionLoginUser } from '@/lib/serverAction/auth-actions';
-// import { Separator } from '@/components/ui/separator';
+import { Separator } from '@/components/ui/separator';
+import { actionLoginUser } from '@/lib/server-actions/auth-actions';
 
 const LoginPage = () => {
   const router = useRouter();
@@ -42,7 +42,7 @@ const LoginPage = () => {
       form.reset();
       setSubmitError(error.message);
     }
-    router.replace('/dashboard')
+    router.replace('/dashboard');
   };
 
   return (
@@ -54,7 +54,8 @@ const LoginPage = () => {
         onSubmit={form.handleSubmit(onSubmit)}
         className="w-full sm:justify-center sm:w-[400px] space-y-6 flex flex-col"
       >
-        <Link href="/"
+        <Link
+          href="/"
           className="
           w-full
           flex
@@ -67,16 +68,19 @@ const LoginPage = () => {
             width={50}
             height={50}
           />
-          <span className="font-semibold dark:text-white text-3xl first-letter:ml-2">
-            AdaptiFlex
+          <span
+            className="font-semibold
+          dark:text-white text-4xl first-letter:ml-2"
+          >
+            cypress.
           </span>
         </Link>
-
-        <FormDescription className="text-foreground/60">
+        <FormDescription
+          className="
+        text-foreground/60"
+        >
           An all-In-One Collaboration and Productivity Platform
         </FormDescription>
-
-        {/* ---------------Email Field  */}
         <FormField
           disabled={isLoading}
           control={form.control}
@@ -94,8 +98,6 @@ const LoginPage = () => {
             </FormItem>
           )}
         />
-
-        {/* ---------------Password Field */}
         <FormField
           disabled={isLoading}
           control={form.control}
@@ -113,8 +115,6 @@ const LoginPage = () => {
             </FormItem>
           )}
         />
-
-        {/* ---------------Submit Button */}
         {submitError && <FormMessage>{submitError}</FormMessage>}
         <Button
           type="submit"
@@ -124,11 +124,12 @@ const LoginPage = () => {
         >
           {!isLoading ? 'Login' : <Loader />}
         </Button>
-
-        {/* ---------------Create Account */}
         <span className="self-container">
           Dont have an account?{' '}
-          <Link href="/signup" className="text-primary">
+          <Link
+            href="/signup"
+            className="text-primary"
+          >
             Sign Up
           </Link>
         </span>
