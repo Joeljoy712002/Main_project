@@ -60,6 +60,8 @@ var TOOLBAR_OPTIONS = [
   [{ font: [] }],
   [{ align: [] }],
 
+  [{ 'image': 'image' }, { 'video': 'video' }],
+
   ['clean'], // remove formatting button
 ];
 
@@ -395,43 +397,43 @@ const QuillEditor: React.FC<QuillEditorProps> = ({
       const contents = quill.getContents();
       const quillLength = quill.getLength();
       saveTimerRef.current = setTimeout(async () => {
-        // if (contents && quillLength !== 1 && fileId) {
-        //   if (dirType == 'workspace') {
-        //     dispatch({
-        //       type: 'UPDATE_WORKSPACE',
-        //       payload: {
-        //         workspace: { data: JSON.stringify(contents) },
-        //         workspaceId: fileId,
-        //       },
-        //     });
-        //     await updateWorkspace({ data: JSON.stringify(contents) }, fileId);
-        //   }
-        //   if (dirType == 'folder') {
-        //     if (!workspaceId) return;
-        //     dispatch({
-        //       type: 'UPDATE_FOLDER',
-        //       payload: {
-        //         folder: { data: JSON.stringify(contents) },
-        //         workspaceId,
-        //         folderId: fileId,
-        //       },
-        //     });
-        //     await updateFolder({ data: JSON.stringify(contents) }, fileId);
-        //   }
-        //   if (dirType == 'file') {
-        //     if (!workspaceId || !folderId) return;
-        //     dispatch({
-        //       type: 'UPDATE_FILE',
-        //       payload: {
-        //         file: { data: JSON.stringify(contents) },
-        //         workspaceId,
-        //         folderId: folderId,
-        //         fileId,
-        //       },
-        //     });
-        //     await updateFile({ data: JSON.stringify(contents) }, fileId);
-        //   }
-        // }
+        if (contents && quillLength !== 1 && fileId) {
+          if (dirType == 'workspace') {
+            dispatch({
+              type: 'UPDATE_WORKSPACE',
+              payload: {
+                workspace: { data: JSON.stringify(contents) },
+                workspaceId: fileId,
+              },
+            });
+            await updateWorkspace({ data: JSON.stringify(contents) }, fileId);
+          }
+          if (dirType == 'folder') {
+            if (!workspaceId) return;
+            dispatch({
+              type: 'UPDATE_FOLDER',
+              payload: {
+                folder: { data: JSON.stringify(contents) },
+                workspaceId,
+                folderId: fileId,
+              },
+            });
+            await updateFolder({ data: JSON.stringify(contents) }, fileId);
+          }
+          if (dirType == 'file') {
+            if (!workspaceId || !folderId) return;
+            dispatch({
+              type: 'UPDATE_FILE',
+              payload: {
+                file: { data: JSON.stringify(contents) },
+                workspaceId,
+                folderId: folderId,
+                fileId,
+              },
+            });
+            await updateFile({ data: JSON.stringify(contents) }, fileId);
+          }
+        }
         setSaving(false);
       }, 850);
       socket.emit('send-changes', delta, fileId);
@@ -495,7 +497,7 @@ const QuillEditor: React.FC<QuillEditorProps> = ({
           email: user.email?.split('@')[0],
           avatarUrl: response.avatarUrl
             ? supabase.storage.from('avatars').getPublicUrl(response.avatarUrl)
-                .data.publicUrl
+              .data.publicUrl
             : '',
         });
       });
@@ -506,6 +508,7 @@ const QuillEditor: React.FC<QuillEditorProps> = ({
 
   return (
     <>
+      {/* {isConnected ? 'connected' : 'not connected'} */}
       <div className="relative">
         {details.inTrash && (
           <article
@@ -612,24 +615,13 @@ const QuillEditor: React.FC<QuillEditorProps> = ({
             {saving ? (
               <Badge
                 variant="secondary"
-                className="bg-orange-600 top-4
-                text-white
-                right-4
-                z-50
-                "
-              >
+                className="bg-orange-600 top-4 text-white right-4 z-50">
                 Saving...
               </Badge>
             ) : (
               <Badge
                 variant="secondary"
-                className="bg-emerald-600 
-                top-4
-              text-white
-              right-4
-              z-50
-              "
-              >
+                className="bg-emerald-600 top-4 text-white right-4 z-50">
                 Saved
               </Badge>
             )}
@@ -645,31 +637,19 @@ const QuillEditor: React.FC<QuillEditorProps> = ({
                 .getPublicUrl(details.bannerUrl).data.publicUrl
             }
             fill
-            className="w-full md:h-48
-            h-20
-            object-cover"
+            className="w-full md:h-48 h-20 object-cover"
             alt="Banner Image"
           />
         </div>
       )}
       <div
-        className="flex 
-        justify-center
-        items-center
-        flex-col
-        mt-2
-        relative
-      "
-      >
+        className="flex justify-center
+        items-center flex-col  mt-2
+        relative">
         <div
-          className="w-full 
-        self-center 
-        max-w-[800px] 
-        flex 
-        flex-col
-         px-7 
-         lg:my-8"
-        >
+          className="w-full self-center 
+        max-w-[800px] flex flex-col
+         px-7 lg:my-8">
           <div className="text-[80px]">
             <EmojiPicker getValue={iconOnChange}>
               <div

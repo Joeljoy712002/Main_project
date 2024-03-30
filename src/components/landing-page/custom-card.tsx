@@ -1,4 +1,3 @@
-import React from 'react';
 import { Card, CardContent, CardFooter, CardHeader } from '../ui/card';
 import { cn } from '@/lib/utils';
 
@@ -22,11 +21,7 @@ const CustomCard: React.FC<CustomCardProps> = ({
       {...props}
     >
       <CardHeader>{cardHeader}</CardHeader>
-      <CardContent
-        className="grid
-        gap-4
-      "
-      >
+      <CardContent className="grid gap-4 ">
         {cardContent}
       </CardContent>
       <CardFooter>{cardFooter}</CardFooter>

@@ -3,7 +3,6 @@ import { useAppState } from '@/lib/providers/state-provider';
 import { useSupabaseUser } from '@/lib/providers/supabase-user-provider';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import { useRouter } from 'next/navigation';
-import React from 'react';
 import { Button } from '../ui/button';
 
 interface LogoutButtonProps {

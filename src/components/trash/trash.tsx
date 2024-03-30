@@ -1,4 +1,3 @@
-import React from 'react';
 import CustomDialogTrigger from '../global/custom-dialog-trigger';
 import TrashRestore from './trash-restore';
 

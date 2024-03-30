@@ -58,7 +58,7 @@ const FoldersDropdownList: React.FC<FoldersDropdownListProps> = ({
 
   //add folder
   const addFolderHandler = async () => {
-    if (folders.length >= 3 && !subscription) {
+    if (folders.length >= 99 && !subscription) {
       setOpen(true);
       return;
     }
@@ -105,14 +105,9 @@ const FoldersDropdownList: React.FC<FoldersDropdownListProps> = ({
         justify-between 
         items-center 
         pr-4 
-        text-Neutrals/neutrals-8
-  "
+        text-Neutrals/neutrals-8"
       >
-        <span
-          className="text-Neutrals-8 
-        font-bold 
-        text-xs"
-        >
+        <span className="text-Neutrals-8 font-bold text-xs">
           FOLDERS
         </span>
         <TooltipComponent message="Create Folder">
@@ -122,8 +117,7 @@ const FoldersDropdownList: React.FC<FoldersDropdownListProps> = ({
             className="group-hover/title:inline-block
             hidden 
             cursor-pointer
-            hover:dark:text-white
-          "
+            hover:dark:text-white"
           />
         </TooltipComponent>
       </div>

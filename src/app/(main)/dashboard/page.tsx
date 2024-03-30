@@ -1,4 +1,3 @@
-import React from 'react';
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
 
 import { cookies } from 'next/headers';
@@ -33,9 +32,7 @@ const DashboardPage = async () => {
         w-screen
         flex
         justify-center
-        items-center
-  "
-      >
+        items-center">
         <DashboardSetup
           user={user}
           subscription={subscription}

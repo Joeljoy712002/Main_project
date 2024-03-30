@@ -1,6 +1,5 @@
 export const dynamic = 'force-dynamic';
 
-import React from 'react';
 import QuillEditor from '@/components/quill-editor/quill-editor';
 import { getFolderDetails } from '@/lib/supabase/queries';
 import { redirect } from 'next/navigation';
@@ -10,7 +9,7 @@ const Folder = async ({ params }: { params: { folderId: string } }) => {
   if (error || !data.length) redirect('/dashboard');
 
   return (
-    <div className="relative ">
+    <div className="relative">
       <QuillEditor
         dirType="folder"
         fileId={params.folderId}

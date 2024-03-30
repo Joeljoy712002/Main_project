@@ -10,11 +10,7 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children, params }) => {
   return (
     <main
-      className="flex overflow-hidden
-      h-screen
-      w-screen
-  "
-    >
+      className="flex overflow-hidden h-screen w-screen">
       <Sidebar params={params} />
       <MobileSidebar>
         <Sidebar
@@ -23,13 +19,12 @@ const Layout: React.FC<LayoutProps> = ({ children, params }) => {
         />
       </MobileSidebar>
       <div
-        className="dark:boder-Neutrals-12/70
+        className="dark:border-Neutrals-12/70
         border-l-[1px]
         w-full
         relative
         overflow-scroll
-      "
-      >
+      ">
         {children}
       </div>
     </main>

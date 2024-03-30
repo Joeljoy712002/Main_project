@@ -84,10 +84,7 @@ const TrashRestore = () => {
           left-[50%]
           transform
           -translate-x-1/2
-          -translate-y-1/2
-
-      "
-        >
+          -translate-y-1/2">
           No Items in trash
         </div>
       )}

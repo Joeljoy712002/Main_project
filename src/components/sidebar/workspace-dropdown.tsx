@@ -51,11 +51,7 @@ const WorkspaceDropdown: React.FC<WorkspaceDropdownProps> = ({
   }, [state, defaultValue]);
 
   return (
-    <div
-      className=" relative inline-block
-      text-left
-  "
-    >
+    <div className=" relative inline-block text-left">
       <div>
         <span onClick={() => setIsOpen(!isOpen)}>
           {selectedOption ? (
@@ -75,13 +71,12 @@ const WorkspaceDropdown: React.FC<WorkspaceDropdownProps> = ({
           z-50
           h-[190px]
           bg-black/10
-          backdrop-blur-lg
+          backdrop-blur-[7px]
           group
           overflow-scroll
           border-[1px]
           border-muted
-      "
-        >
+      ">
           <div className="rounded-md flex flex-col">
             <div className="!p-2">
               {!!privateWorkspaces.length && (

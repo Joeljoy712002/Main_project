@@ -220,13 +220,14 @@ const SettingsForm = () => {
           accept="image/*"
           placeholder="Workspace Logo"
           onChange={onChangeWorkspaceLogo}
-          disabled={uploadingLogo || subscription?.status !== 'active'}
+          // disabled={uploadingLogo || subscription?.status !== 'active'}
+          disabled={uploadingLogo}
         />
-        {subscription?.status !== 'active' && (
+        {/* {subscription?.status !== 'active' && (
           <small className="text-muted-foreground">
             To customize your workspace, you need to be on a Pro Plan
           </small>
-        )}
+        )} */}
       </div>
       <>
         <Label htmlFor="permissions">Permissions</Label>
@@ -311,7 +312,7 @@ const SettingsForm = () => {
                     >
                       <div className="flex gap-4 items-center">
                         <Avatar>
-                          <AvatarImage src="/avatars/7.png" />
+                          <AvatarImage src={''} />
                           <AvatarFallback>PJ</AvatarFallback>
                         </Avatar>
                         <div
@@ -343,9 +344,7 @@ const SettingsForm = () => {
                   bottom-0
                   flex
                   justify-center
-                  items-center
-                "
-                  >
+                  items-center">
                     <span className="text-muted-foreground text-sm">
                       You have no collaborators
                     </span>
@@ -412,11 +411,12 @@ const SettingsForm = () => {
           </div>
         </div>
         <LogoutButton>
-          <div className="flex items-center">
+          <div className="pl-8 flex items-center gap-1">
             <LogOut />
+            <p>LogOut</p>
           </div>
         </LogoutButton>
-        <p className="flex items-center gap-2 mt-6">
+        {/* <p className="flex items-center gap-2 mt-6">
           <CreditCard size={20} /> Billing & Plan
         </p>
         <Separator />
@@ -456,7 +456,7 @@ const SettingsForm = () => {
               Start Plan
             </Button>
           </div>
-        )}
+        )} */}
       </>
       <AlertDialog open={openAlertMessage}>
         <AlertDialogContent>

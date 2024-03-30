@@ -1,5 +1,4 @@
 import Header from '@/components/landing-page/header';
-import React from 'react';
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
