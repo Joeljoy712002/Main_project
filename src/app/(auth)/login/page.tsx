@@ -15,7 +15,7 @@ import {
 } from '@/components/ui/form';
 import Link from 'next/link';
 import Image from 'next/image';
-import Logo from '../../../../public/cypresslogo.svg';
+import Logo from '../../../../public/adaptiflexlogo.svg';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import Loader from '@/components/global/Loader';
@@ -128,7 +128,7 @@ const LoginPage = () => {
           Dont have an account?{' '}
           <Link
             href="/signup"
-            className="text-primary"
+            className="text-[#FF471F]"
           >
             Sign Up
           </Link>

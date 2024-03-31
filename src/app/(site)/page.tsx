@@ -1,56 +1,70 @@
-import TitleSection from '@/components/landing-page/title-section';
+import { Button } from '@/components/ui/button';
 import Image from 'next/image';
-import Banner from '../../../public/appBanner.png';
+import Link from 'next/link';
+import styles from './page.module.css'
+
+import banner from '../../../public/Banner.webp'
+
+const features = [
+  {
+    title: 'Real-Time Cursor'
+  },
+  {
+    title: 'Real-Time Collaboration'
+  },
+  {
+    title: 'Shared/ Private Work-Spaces'
+  },
+  {
+    title: 'Unlimited Folders & Files'
+  },
+];
 
 const HomePage = () => {
   return (
-    <>
-      <section
-        className=" overflow-hidden
-      px-4
-      sm:px-6
-      mt-10
-      sm:flex
-      sm:flex-col
-      gap-4
-      md:justify-center
-      md:items-center"
-      >
-        <TitleSection
-          pill="✨ Your Workspace, Perfected"
-          title="All-In-One Collaboration and Productivity Platform"
-        />
-        <div
-          className="md:mt-[-90px]
-          sm:w-full
-          w-[750px]
-          flex
-          justify-center
-          items-center
-          mt-[-40px]
-          relative
-          sm:ml-0
-          ml-[-50px]
-        "
-        >
-          <Image
-            src={Banner}
-            alt="Application Banner"
-          />
-          <div
-            className="bottom-0
-            top-[50%]
-            bg-gradient-to-t
-            dark:from-background
-            left-0
-            right-0
-            absolute
-            z-10
-          "
-          ></div>
+    <section className={styles.homePage}>
+      <div className={styles.title}>
+        <h1>
+          An all-In-One <br />
+          Collaboration and <br />
+          Productivity Platform
+        </h1>
+        <div className="flex gap-4">
+          <Link href={'/login'}>
+            <Button
+              variant="btn-primary"
+              className="text-[#FF471F] hover:bg-white hover:text-[#FF471F] border-[#FF471F] hover:border-[#FF471F]"
+            >
+              Login
+            </Button>
+          </Link>
+          <Link href="/signup">
+            <Button
+              variant="btn-primary"
+              className="bg-[#FF471F] text-white border-[#FF471F] hover:bg-[#FF471F]  hover:border-[#FF471F]"
+            >
+              Sign Up
+            </Button>
+          </Link>
         </div>
-      </section>
-    </>
+        <div className={styles.feat}>
+          {
+            features.map((feature, index) => (
+              <span key={index} className='bg-white/10 p-1 pl-3 pr-3 rounded-full text-sm'>
+                {feature.title}
+              </span>
+            ))
+          }
+        </div>
+      </div>
+      <Image
+        src={banner}
+        alt='banner'
+        width={1500}
+        height={1500}
+        className={styles.banner}
+      />
+    </section>
   );
 };
 

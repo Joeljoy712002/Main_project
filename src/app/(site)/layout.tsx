@@ -1,4 +1,5 @@
 import Header from '@/components/landing-page/header';
+import Footer from '@/components/landing-page/footer';
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -11,6 +12,7 @@ const HomePageLayout = ({ children }: { children: React.ReactNode }) => {
     <main>
       <Header />
       {children}
+      <Footer />
     </main>
   );
 };

@@ -3,14 +3,14 @@ export const dynamic = 'force-dynamic';
 import type { Metadata } from 'next';
 import './globals.css';
 import { ThemeProvider } from '@/lib/providers/next-theme-provider';
-import { DM_Sans } from 'next/font/google';
+import { Montserrat } from 'next/font/google';
 import { twMerge } from 'tailwind-merge';
 import AppStateProvider from '@/lib/providers/state-provider';
 import { SupabaseUserProvider } from '@/lib/providers/supabase-user-provider';
 import { Toaster } from '@/components/ui/toaster';
 import { SocketProvider } from '@/lib/providers/socket-provider';
 
-const inter = DM_Sans({ subsets: ['latin'] });
+const inter = Montserrat({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'AdaptiFlex',

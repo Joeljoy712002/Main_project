@@ -1,46 +1,24 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import Logo from '../../../public/cypresslogo.svg';
-
-import { Button } from '../ui/button';
+import Logo from '../../../public/adaptiflexlogo.svg';
 
 const Header = () => {
   return (
-    <header className="p-4 flex justify-center items-center">
+    <header className="p-4 fixed top-0">
       <Link
         href={'/'}
-        className="w-full flex gap-2 justify-left items-center"
+        className="w-full flex gap-1 justify-left items-center"
       >
         <Image
           src={Logo}
-          alt="Cypress Logo"
-          width={25}
-          height={25}
+          alt="Adaptiflex Logo"
+          width={45}
+          height={45}
         />
         <span className="font-semibold dark:text-white">
           AdaptiFlex.
         </span>
       </Link>
-
-      <aside
-        className="flex w-full gap-2 justify-end">
-        <Link href={'/login'}>
-          <Button
-            variant="btn-secondary"
-            className=" p-1 hidden sm:block"
-          >
-            Login
-          </Button>
-        </Link>
-        <Link href="/signup">
-          <Button
-            variant="btn-primary"
-            className="whitespace-nowrap"
-          >
-            Sign Up
-          </Button>
-        </Link>
-      </aside>
     </header>
   );
 };
