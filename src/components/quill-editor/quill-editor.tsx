@@ -46,9 +46,10 @@ interface QuillEditorProps {
 var TOOLBAR_OPTIONS = [
   ['bold', 'italic', 'underline', 'strike'], // toggled buttons
   ['blockquote', 'code-block'],
+  ['image', 'link'],
 
   [{ header: 1 }, { header: 2 }], // custom button values
-  [{ list: 'ordered' }, { list: 'bullet' }],
+  [{ list: 'ordered' }, { list: 'bullet' }, { list: 'check' }],
   [{ script: 'sub' }, { script: 'super' }], // superscript/subscript
   [{ indent: '-1' }, { indent: '+1' }], // outdent/indent
   [{ direction: 'rtl' }], // text direction
@@ -59,8 +60,6 @@ var TOOLBAR_OPTIONS = [
   [{ color: [] }, { background: [] }], // dropdown with defaults from theme
   [{ font: [] }],
   [{ align: [] }],
-
-  [{ 'image': 'image' }, { 'video': 'video' }],
 
   ['clean'], // remove formatting button
 ];
@@ -164,7 +163,7 @@ const QuillEditor: React.FC<QuillEditorProps> = ({
       const editor = document.createElement('div');
       wrapper.append(editor);
       const Quill = (await import('quill')).default;
-      const QuillCursors = (await import('quill-cursors')).default;
+      const QuillCursors: any = (await import('quill-cursors')).default;
       Quill.register('modules/cursors', QuillCursors);
       const q = new Quill(editor, {
         theme: 'snow',
@@ -513,7 +512,7 @@ const QuillEditor: React.FC<QuillEditorProps> = ({
         {details.inTrash && (
           <article
             className="py-2 
-          z-40 
+          z-[999] 
           bg-[#EB5757] 
           flex  
           md:flex-row 
@@ -576,7 +575,7 @@ const QuillEditor: React.FC<QuillEditorProps> = ({
         p-8"
         >
           <div>{breadCrumbs}</div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 fixed right-3 top-1">
             <div className="flex items-center justify-center h-10">
               {collaborators?.map((collaborator) => (
                 <TooltipProvider key={collaborator.id}>
@@ -648,7 +647,7 @@ const QuillEditor: React.FC<QuillEditorProps> = ({
         relative">
         <div
           className="w-full self-center 
-        max-w-[800px] flex flex-col
+         flex flex-col
          px-7 lg:my-8">
           <div className="text-[80px]">
             <EmojiPicker getValue={iconOnChange}>
@@ -720,7 +719,7 @@ const QuillEditor: React.FC<QuillEditorProps> = ({
         </div>
         <div
           id="container"
-          className="max-w-[800px]"
+          className="w-full px-7"
           ref={wrapperRef}
         ></div>
       </div>

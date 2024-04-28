@@ -14,7 +14,7 @@ import { Button } from '../ui/button';
 import Loader from './Loader';
 import { Price, ProductWirhPrice } from '@/lib/supabase/supabase.types';
 import { useToast } from '../ui/use-toast';
-import { getStripe } from '@/lib/stripe/stripeClient';
+// import { getStripe } from '@/lib/stripe/stripeClient';
 
 interface SubscriptionModalProps {
   products: ProductWirhPrice[];
@@ -46,8 +46,8 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ products }) => {
       });
 
       console.log('Getting Checkout for stripe');
-      const stripe = await getStripe();
-      stripe?.redirectToCheckout({ sessionId });
+      // const stripe = await getStripe();
+      //  redirectToCheckout({ sessionId });
     } catch (error) {
       toast({ title: 'Oppse! Something went wrong.', variant: 'destructive' });
     } finally {
@@ -72,29 +72,29 @@ const SubscriptionModal: React.FC<SubscriptionModalProps> = ({ products }) => {
           </DialogDescription>
           {products.length
             ? products.map((product) => (
-                <div
-                  className="
+              <div
+                className="
                   flex
                   justify-between
                   items-center
                   "
-                  key={product.id}
-                >
-                  {product.prices?.map((price) => (
-                    <React.Fragment key={price.id}>
-                      <b className="text-3xl text-foreground">
-                        {formatPrice(price)} / <small>{price.interval}</small>
-                      </b>
-                      <Button
-                        onClick={() => onClickContinue(price)}
-                        disabled={isLoading}
-                      >
-                        {isLoading ? <Loader /> : 'Upgrade ✨'}
-                      </Button>
-                    </React.Fragment>
-                  ))}
-                </div>
-              ))
+                key={product.id}
+              >
+                {product.prices?.map((price) => (
+                  <React.Fragment key={price.id}>
+                    <b className="text-3xl text-foreground">
+                      {formatPrice(price)} / <small>{price.interval}</small>
+                    </b>
+                    <Button
+                      onClick={() => onClickContinue(price)}
+                      disabled={isLoading}
+                    >
+                      {isLoading ? <Loader /> : 'Upgrade ✨'}
+                    </Button>
+                  </React.Fragment>
+                ))}
+              </div>
+            ))
             : ''}
           {/* No Products Available */}
         </DialogContent>
