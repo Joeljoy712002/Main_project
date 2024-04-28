@@ -8,7 +8,7 @@ import { cookies } from "next/headers";
 export async function actionLoginUser({
   email,
   password,
-}: z.infer<typeof FormSchema>) {
+}: z.infer<typeof FormSchema>) {  
   const supabase = createRouteHandlerClient({ cookies });
   const response = await supabase.auth.signInWithPassword({
     email,
